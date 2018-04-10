@@ -1,0 +1,5 @@
+= Fastcombeat Docs
+
+Welcome to the Fastcombeat documentation.
+
+
