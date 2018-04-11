@@ -6,3 +6,4 @@
 /fastcombeat.test
 *.pyc
 *.swp
+logs/

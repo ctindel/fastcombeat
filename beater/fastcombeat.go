@@ -165,7 +165,7 @@ func (bt *Fastcombeat) Run(b *beat.Beat) error {
 			Timestamp: time.Now(),
 			Fields: common.MapStr{
 				"type":    b.Info.Name,
-				"bytespersecond": bytesPerSec,
+				"bytes_per_sec": bytesPerSec,
 			},
 		}
 		bt.client.Publish(event)
