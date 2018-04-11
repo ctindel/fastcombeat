@@ -7,8 +7,10 @@ import "time"
 
 type Config struct {
 	Period time.Duration `config:"period"`
+	UseSSL bool `config:"use_ssl"`
 }
 
 var DefaultConfig = Config{
 	Period: 1 * time.Second,
+	UseSSL: true,
 }
