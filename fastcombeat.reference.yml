@@ -5,6 +5,7 @@
 fastcombeat:
   # Defines how often an event is sent to the output
   period: 60s
+  #use_ssl: true
 
 #================================ General ======================================
 

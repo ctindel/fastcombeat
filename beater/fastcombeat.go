@@ -148,7 +148,9 @@ func (bt *Fastcombeat) Run(b *beat.Beat) error {
 		count := uint64(3)
 		bytesPerSec := uint64(0)
 
-		fast.UseHTTPS = true
+		logp.Info("config.UseSSL: %t", bt.config.UseSSL)
+		fast.UseHTTPS = bt.config.UseSSL
+
 		urls := fast.GetDlUrls(count)
 		logp.Info("Got %d from fast service", len(urls))
 		if len(urls) == 0 {
