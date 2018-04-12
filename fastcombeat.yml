@@ -5,6 +5,8 @@
 fastcombeat:
   # Defines how often an event is sent to the output
   period: 60s
+  # Defines whether to use http or https endpoints for the speed test
+  #use_ssl: true
 
 #================================ General =====================================
 

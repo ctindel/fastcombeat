@@ -4,6 +4,8 @@ Fastcombeat estimates your internet download speed by performing a series of dow
 
 Besides all of the typical beats configuration options, there is one more configuration option fastcombeat.use_ssl which should be set either to true or false to tell fastcombeat whether to use http or https endpoints for the speed test.
 
+Credit to https://github.com/gesquive/fast-cli as the basis for the underlying bandwidth meter go code.
+
 Ensure that this folder is at the following location:
 `${GOPATH}/src/github.com/ctindel/fastcombeat`
 
