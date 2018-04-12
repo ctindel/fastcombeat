@@ -1,0 +1,13 @@
+{
+	"comment": "",
+	"ignore": "",
+	"package": [
+		{
+			"checksumSHA1": "CmxJdDqm1olGjNC9N5tMSSG6FDo=",
+			"path": "github.com/dustin/go-humanize",
+			"revision": "bb3d318650d48840a39aa21a027c6630e198e626",
+			"revisionTime": "2017-11-10T20:55:13Z"
+		}
+	],
+	"rootPath": "github.com/ctindel/fastcombeat"
+}

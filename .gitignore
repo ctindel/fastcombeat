@@ -1,5 +1,6 @@
 /.idea
 /build
+/fastcombeat.dev.yml
 
 .DS_Store
 /fastcombeat

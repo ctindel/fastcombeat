@@ -1,0 +1,87 @@
+{
+  "objects": [
+    {
+      "attributes": {
+        "description": "",
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{}"
+        },
+        "title": "Overview [Fastcombeat]",
+        "uiStateJSON": "{}",
+        "version": 1,
+        "visState": "{\"title\":\"Overview [Fastcombeat]\",\"type\":\"markdown\",\"params\":{\"fontSize\":12,\"markdown\":\"[Fast.com](https://fast.com) estimates your internet download speed by performing a series of downloads from Netflix servers.  There's no way for your ISP to cheat it or give priority to it without just making Netflix faster in general.\\n\\nThe [Netflix internet speed recommendations](https://help.netflix.com/en/node/306) are:\\n- 0.5 Megabits per second: Required broadband connection speed\\n- 1.5 Megabits per second: Recommended broadband connection speed\\n- 3.0 Megabits per second: Recommended for SD quality\\n- 5.0 Megabits per second: Recommended for HD quality\\n- 25.0 Megabits per second: Recommended for UltraHD (4K) quality\"},\"aggs\":[]}"
+      },
+      "id": "589e6c40-3dc1-11e8-bd4a-9f650f8beba8",
+      "type": "visualization",
+      "updated_at": "2018-04-11T19:48:45.956Z",
+      "version": 1
+    },
+    {
+      "attributes": {
+        "description": "",
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"index\":\"791d9480-3da5-11e8-bd4a-9f650f8beba8\",\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"lucene\"}}"
+        },
+        "title": "Netflix Gauge [Fastcombeat]",
+        "uiStateJSON": "{\"vis\":{\"defaultColors\":{\"0 - 0.5\":\"rgb(247,252,245)\",\"0.5 - 1.5\":\"rgb(211,238,205)\",\"1.5 - 3\":\"rgb(152,213,148)\",\"3 - 5\":\"rgb(75,176,98)\",\"5 - 25\":\"rgb(21,127,59)\",\"25 - 50\":\"rgb(0,68,27)\"},\"colors\":{\"0 - 0.5\":\"#C15C17\",\"0.5 - 1.5\":\"#F9934E\",\"1.5 - 3\":\"#FCEACA\",\"3 - 5\":\"#E5AC0E\",\"5 - 25\":\"#CCA300\",\"25 - 1000\":\"#629E51\",\"25 - 50\":\"#629E51\"},\"legendOpen\":true}}",
+        "version": 1,
+        "visState": "{\"title\":\"Netflix Gauge [Fastcombeat]\",\"type\":\"gauge\",\"params\":{\"type\":\"gauge\",\"addTooltip\":true,\"addLegend\":true,\"isDisplayWarning\":false,\"gauge\":{\"verticalSplit\":false,\"extendRange\":false,\"percentageMode\":false,\"gaugeType\":\"Arc\",\"gaugeStyle\":\"Full\",\"backStyle\":\"Full\",\"orientation\":\"vertical\",\"colorSchema\":\"Greens\",\"gaugeColorMode\":\"Labels\",\"colorsRange\":[{\"from\":0,\"to\":0.5},{\"from\":0.5,\"to\":1.5},{\"from\":1.5,\"to\":3},{\"from\":3,\"to\":5},{\"from\":5,\"to\":25},{\"from\":25,\"to\":50}],\"invertColors\":false,\"labels\":{\"show\":true,\"color\":\"black\"},\"scale\":{\"show\":true,\"labels\":false,\"color\":\"#333\"},\"type\":\"meter\",\"style\":{\"bgWidth\":0.9,\"width\":0.9,\"mask\":false,\"bgMask\":false,\"maskBars\":50,\"bgFill\":\"#eee\",\"bgColor\":false,\"subText\":\"\",\"fontSize\":60,\"labelColor\":true}}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"top_hits\",\"schema\":\"metric\",\"params\":{\"field\":\"megabits_per_sec\",\"aggregate\":\"max\",\"size\":1,\"sortField\":\"@timestamp\",\"sortOrder\":\"desc\",\"customLabel\":\"Fast.com Mb/s\"}}]}"
+      },
+      "id": "2e087d00-3dc5-11e8-bd4a-9f650f8beba8",
+      "type": "visualization",
+      "updated_at": "2018-04-12T12:26:51.662Z",
+      "version": 6
+    },
+    {
+      "attributes": {
+        "description": "",
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{}"
+        },
+        "title": "Fast.com TSVB [Fastcombeat]",
+        "uiStateJSON": "{}",
+        "version": 1,
+        "visState": "{\"title\":\"Fast.com TSVB [Fastcombeat]\",\"type\":\"metrics\",\"params\":{\"id\":\"61ca57f0-469d-11e7-af02-69e470af7417\",\"type\":\"timeseries\",\"series\":[{\"id\":\"61ca57f1-469d-11e7-af02-69e470af7417\",\"color\":\"rgba(0,156,224,1)\",\"split_mode\":\"everything\",\"metrics\":[{\"id\":\"61ca57f2-469d-11e7-af02-69e470af7417\",\"type\":\"avg\",\"field\":\"bytes_per_sec\"},{\"script\":\"params.bytespersecond / 125000\",\"id\":\"dedf4830-3db5-11e8-9059-19fe1d44c649\",\"type\":\"calculation\",\"variables\":[{\"id\":\"e26317c0-3db5-11e8-9059-19fe1d44c649\",\"name\":\"bytespersecond\",\"field\":\"61ca57f2-469d-11e7-af02-69e470af7417\"}]}],\"seperate_axis\":0,\"axis_position\":\"right\",\"formatter\":\"number\",\"chart_type\":\"line\",\"line_width\":1,\"point_size\":1,\"fill\":0.5,\"stacked\":\"none\",\"terms_field\":null,\"terms_size\":\"5\",\"label\":\"Fast.com Mb/s\"},{\"id\":\"3093b230-3db9-11e8-9059-19fe1d44c649\",\"color\":\"rgba(196,81,0,1)\",\"split_mode\":\"everything\",\"metrics\":[{\"id\":\"3093b231-3db9-11e8-9059-19fe1d44c649\",\"type\":\"static\",\"value\":\"0.5\"}],\"seperate_axis\":0,\"axis_position\":\"right\",\"formatter\":\"number\",\"chart_type\":\"line\",\"line_width\":1,\"point_size\":1,\"fill\":\"0\",\"stacked\":\"none\",\"label\":\"Required Mb/s\"},{\"id\":\"7a7ff390-3db9-11e8-9059-19fe1d44c649\",\"color\":\"rgba(254,146,0,1)\",\"split_mode\":\"everything\",\"metrics\":[{\"id\":\"7a7ff391-3db9-11e8-9059-19fe1d44c649\",\"type\":\"static\",\"value\":\"1.5\"}],\"seperate_axis\":0,\"axis_position\":\"right\",\"formatter\":\"number\",\"chart_type\":\"line\",\"line_width\":1,\"point_size\":1,\"fill\":0.5,\"stacked\":\"none\",\"label\":\"Recommended Mb/s\"},{\"id\":\"912f2430-3db9-11e8-9059-19fe1d44c649\",\"color\":\"rgba(252,220,0,1)\",\"split_mode\":\"everything\",\"metrics\":[{\"id\":\"912f2431-3db9-11e8-9059-19fe1d44c649\",\"type\":\"static\",\"value\":\"3.0\"}],\"seperate_axis\":0,\"axis_position\":\"right\",\"formatter\":\"number\",\"chart_type\":\"line\",\"line_width\":1,\"point_size\":1,\"fill\":0.5,\"stacked\":\"none\",\"label\":\"SD Mb/s\"},{\"id\":\"ba3e4f90-3db9-11e8-9059-19fe1d44c649\",\"color\":\"rgba(219,223,0,1)\",\"split_mode\":\"everything\",\"metrics\":[{\"id\":\"ba3e4f91-3db9-11e8-9059-19fe1d44c649\",\"type\":\"static\",\"value\":\"5.0\"}],\"seperate_axis\":0,\"axis_position\":\"right\",\"formatter\":\"number\",\"chart_type\":\"line\",\"line_width\":1,\"point_size\":1,\"fill\":0.5,\"stacked\":\"none\",\"label\":\"HD Mb/s\"},{\"id\":\"c8cafb30-3db9-11e8-9059-19fe1d44c649\",\"color\":\"rgba(164,221,0,1)\",\"split_mode\":\"everything\",\"metrics\":[{\"id\":\"c8cafb31-3db9-11e8-9059-19fe1d44c649\",\"type\":\"static\",\"value\":\"25.0\"}],\"seperate_axis\":0,\"axis_position\":\"right\",\"formatter\":\"number\",\"chart_type\":\"line\",\"line_width\":1,\"point_size\":1,\"fill\":0.5,\"stacked\":\"none\",\"label\":\"UltraHD (4K) Mb/s\"}],\"time_field\":\"@timestamp\",\"index_pattern\":\"fastcombeat-*\",\"interval\":\"auto\",\"axis_position\":\"left\",\"axis_formatter\":\"number\",\"show_legend\":1,\"show_grid\":1,\"gauge_color_rules\":[{\"value\":0.5,\"id\":\"5a7a75b0-3db5-11e8-9059-19fe1d44c649\",\"gauge\":\"rgba(159,5,0,1)\",\"opperator\":\"lt\",\"text\":null},{\"value\":1.5,\"id\":\"56de7850-3db7-11e8-9059-19fe1d44c649\",\"gauge\":\"rgba(226,115,0,1)\",\"text\":null,\"opperator\":\"lt\"},{\"value\":3,\"id\":\"57c57cf0-3db7-11e8-9059-19fe1d44c649\",\"gauge\":\"rgba(254,146,0,1)\",\"opperator\":\"lt\"},{\"value\":5,\"id\":\"58a22150-3db7-11e8-9059-19fe1d44c649\",\"opperator\":\"lt\",\"gauge\":\"rgba(252,220,0,1)\"},{\"value\":25,\"id\":\"59412070-3db7-11e8-9059-19fe1d44c649\",\"opperator\":\"lt\",\"gauge\":\"rgba(219,223,0,1)\"},{\"value\":25,\"id\":\"a3309620-3db7-11e8-9059-19fe1d44c649\",\"gauge\":\"rgba(104,188,0,1)\",\"opperator\":\"gt\"}],\"gauge_width\":\"10\",\"gauge_inner_width\":\"10\",\"gauge_style\":\"half\",\"gauge_max\":\"\",\"filter\":\"\",\"gauge_inner_color\":null,\"background_color_rules\":[{\"id\":\"23fdc2f0-3db8-11e8-9059-19fe1d44c649\"}],\"annotations\":[],\"background_color\":null},\"aggs\":[]}"
+      },
+      "id": "6d332580-3dba-11e8-bd4a-9f650f8beba8",
+      "type": "visualization",
+      "updated_at": "2018-04-11T20:26:31.743Z",
+      "version": 6
+    },
+    {
+      "attributes": {
+        "description": "",
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"index\":\"791d9480-3da5-11e8-bd4a-9f650f8beba8\",\"filter\":[],\"query\":{\"language\":\"lucene\",\"query\":\"\"}}"
+        },
+        "title": "Fast.com Bandwidth [Fastcombeat]",
+        "uiStateJSON": "{\"vis\":{\"colors\":{\"Mb/s\":\"#70DBED\",\"Required Mb/s\":\"#BF1B00\",\"Recommended Mb/s\":\"#EF843C\",\"SD Mb/s\":\"#FCEACA\",\"HD Mb/s\":\"#E5AC0E\",\"UHD Mb/s\":\"#7EB26D\"},\"legendOpen\":true}}",
+        "version": 1,
+        "visState": "{\"title\":\"Fast.com Bandwidth [Fastcombeat]\",\"type\":\"line\",\"params\":{\"type\":\"line\",\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"log\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Mb/s\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"line\",\"mode\":\"normal\",\"data\":{\"label\":\"Mb/s\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":false},{\"show\":true,\"mode\":\"normal\",\"type\":\"line\",\"drawLinesBetweenPoints\":true,\"showCircles\":false,\"data\":{\"id\":\"4\",\"label\":\"UHD Mb/s\"},\"valueAxis\":\"ValueAxis-1\"},{\"show\":true,\"mode\":\"normal\",\"type\":\"line\",\"drawLinesBetweenPoints\":true,\"showCircles\":false,\"data\":{\"id\":\"8\",\"label\":\"HD Mb/s\"},\"valueAxis\":\"ValueAxis-1\"},{\"show\":true,\"mode\":\"normal\",\"type\":\"line\",\"drawLinesBetweenPoints\":true,\"showCircles\":false,\"data\":{\"id\":\"5\",\"label\":\"SD Mb/s\"},\"valueAxis\":\"ValueAxis-1\"},{\"show\":true,\"mode\":\"normal\",\"type\":\"line\",\"drawLinesBetweenPoints\":true,\"showCircles\":false,\"data\":{\"id\":\"7\",\"label\":\"Recommended Mb/s\"},\"valueAxis\":\"ValueAxis-1\"},{\"show\":true,\"mode\":\"normal\",\"type\":\"line\",\"drawLinesBetweenPoints\":true,\"showCircles\":false,\"data\":{\"id\":\"6\",\"label\":\"Required Mb/s\"},\"valueAxis\":\"ValueAxis-1\"}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"megabits_per_sec\",\"customLabel\":\"Mb/s\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"netflix_uhd_bw\",\"customLabel\":\"UHD Mb/s\"}},{\"id\":\"8\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"netflix_hd_bw\",\"customLabel\":\"HD Mb/s\"}},{\"id\":\"5\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"netflix_sd_bw\",\"customLabel\":\"SD Mb/s\"}},{\"id\":\"7\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"netflix_recommended_bw\",\"customLabel\":\"Recommended Mb/s\"}},{\"id\":\"6\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"netflix_required_bw\",\"customLabel\":\"Required Mb/s\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}]}"
+      },
+      "id": "68a55e00-3dd0-11e8-bd4a-9f650f8beba8",
+      "type": "visualization",
+      "updated_at": "2018-04-11T21:40:25.861Z",
+      "version": 2
+    },
+    {
+      "attributes": {
+        "description": "Overview for Fast.com Beat Data",
+        "hits": 0,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[],\"highlightAll\":true,\"version\":true}"
+        },
+        "optionsJSON": "{\"darkTheme\":false,\"useMargins\":true,\"hidePanelTitles\":false}",
+        "panelsJSON": "[{\"panelIndex\":\"1\",\"gridData\":{\"x\":0,\"y\":0,\"w\":6,\"h\":3,\"i\":\"1\"},\"version\":\"6.2.3\",\"type\":\"visualization\",\"id\":\"589e6c40-3dc1-11e8-bd4a-9f650f8beba8\"},{\"panelIndex\":\"2\",\"gridData\":{\"x\":6,\"y\":0,\"w\":6,\"h\":3,\"i\":\"2\"},\"version\":\"6.2.3\",\"type\":\"visualization\",\"id\":\"2e087d00-3dc5-11e8-bd4a-9f650f8beba8\"},{\"panelIndex\":\"3\",\"gridData\":{\"x\":0,\"y\":3,\"w\":12,\"h\":3,\"i\":\"3\"},\"version\":\"6.2.3\",\"type\":\"visualization\",\"id\":\"6d332580-3dba-11e8-bd4a-9f650f8beba8\"},{\"panelIndex\":\"4\",\"gridData\":{\"x\":0,\"y\":6,\"w\":12,\"h\":3,\"i\":\"4\"},\"version\":\"6.2.3\",\"type\":\"visualization\",\"id\":\"68a55e00-3dd0-11e8-bd4a-9f650f8beba8\"}]",
+        "timeRestore": false,
+        "title": "[Fastcombeat] Overview",
+        "version": 1
+      },
+      "id": "989bc7e0-3dd3-11e8-bd4a-9f650f8beba8",
+      "type": "dashboard",
+      "updated_at": "2018-04-11T21:59:24.254Z",
+      "version": 1
+    }
+  ],
+  "version": "6.2.3"
+}
