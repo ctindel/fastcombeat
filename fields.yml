@@ -171,8 +171,14 @@
   title: fastcombeat
   description:
   fields:
-    - name: counter
+    - name: bytes_per_sec
       type: long
       required: true
       description: >
-        PLEASE UPDATE DOCUMENTATION
+        The measured value of B/s download speed from fast.com
+    - name: megabits_per_sec
+      type: float
+      required: true
+      script: "doc['bytes_per_sec'].value/(float)125000" 
+      description: >
+        The calculated value of Mb/s download speed from fast.com

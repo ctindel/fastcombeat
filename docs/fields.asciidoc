@@ -213,13 +213,23 @@ None
 
 
 [float]
-=== `counter`
+=== `bytes_per_sec`
 
 type: long
 
 required: True
 
-PLEASE UPDATE DOCUMENTATION
+The measured value of B/s download speed from fast.com
+
+
+[float]
+=== `megabits_per_sec`
+
+type: float
+
+required: True
+
+The calculated value of Mb/s download speed from fast.com
 
 
 [[exported-fields-kubernetes-processor]]
