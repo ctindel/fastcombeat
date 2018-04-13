@@ -1,5 +1,7 @@
 # Fastcombeat
 
+![Fastcombeat Dashboard Screenshot](/fastcombeat_screenshot.png?raw=true "Fastcombeat Dashboard")
+
 Fastcombeat estimates your internet download speed by performing a series of downloads from Netflix servers. Since there is no way for your ISP to cheat it or give the traffice priority without making your Netflix speeds faster in general, it is a very nice way to measure your real download speeds.  For more information see [https://fast.com](https://fast.com/).
 
 Besides all of the typical beats configuration options, there is one more configuration option fastcombeat.use_ssl which should be set either to true or false to tell fastcombeat whether to use http or https endpoints for the speed test.
